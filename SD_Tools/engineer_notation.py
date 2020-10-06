@@ -1,5 +1,4 @@
 from IPython.display import display, Math
-import re
 
 def to_units(prefix : str, num : float, extension : str, precision : int):
     
