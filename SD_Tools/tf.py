@@ -6,7 +6,7 @@ from IPython.display import display, Math, Latex
 def print_tf_simplified(tf: TransferFunction, precision=2):
     num = ""
     den = ""
-    c = "s" if TransferFunction.dt is None else "z"
+    c = "s" if tf.dt is None else "z"
     if(len(tf.num) > 0):
         exponent = len(tf.num) - 1
         for n in tf.num:
@@ -48,7 +48,7 @@ def print_tf_factorized(tf: TransferFunction, precision=2):
     num = ""
     den = ""
     gain = "%.*f" % (precision, K)
-    c = "s" if TransferFunction.dt is None else "z"
+    c = "s" if tf.dt is None else "z"
     if(len(zeros) > 0):
         num += "("
         for z in zeros:
