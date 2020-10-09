@@ -24,7 +24,10 @@ def to_units(prefix : str, num : float, extension : str, precision : int):
     
     if(polarity):
         num = -num
-    evaluatedExpression = "%.*f %s%s" %(precision, num, indices[mag+8], extension)
+    if(mag = -1 && extension == "kg"):
+        evaluatedExpression = "%.*f g" %(precision, num)
+    else:
+        evaluatedExpression = "%.*f %s%s" %(precision, num, indices[mag+8], extension)
     if(prefix[0] == '$' and prefix[-1] == '$'): #latex
         prefix = prefix.replace("$", "")
         display(Math(r"%s\text{%s}" % (prefix, evaluatedExpression)))
@@ -51,7 +54,7 @@ def to_eng(prefix : str, num : float, extension : str, precision : int):
             mag-=1
     if(polarity):
         num = -num
-    evaluatedExpression = "%.*f$\cdot 10^{%d}$ %s" % (precision, num, mag*3, extension)
+    evaluatedExpression = r"%.*f$\cdot 10^{%d}$ %s" % (precision, num, mag*3, extension)
     if(prefix[0] == '$' and prefix[-1] == '$'): #latex
         prefix = prefix.replace("$", "")
         display(Math(r"%s\text{%s}" % (prefix, evaluatedExpression)))
