@@ -24,7 +24,7 @@ def to_units(prefix : str, num : float, extension : str, precision : int):
     
     if(polarity):
         num = -num
-    if(mag == -1 && extension == "kg"):
+    if(mag == -1 and extension == "kg"):
         evaluatedExpression = "%.*f g" %(precision, num)
     else:
         evaluatedExpression = "%.*f %s%s" %(precision, num, indices[mag+8], extension)
