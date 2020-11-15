@@ -2,7 +2,7 @@ from IPython.display import display, Math
 
 def to_units(prefix : str, num : float, extension : str, precision : int):
     
-    if(extension = "kg" or extension=="$kg$"):
+    if(extension == "kg" or extension == "$kg$"):
         num = num * 1000
     else
         mag = 1
@@ -33,8 +33,7 @@ def to_units(prefix : str, num : float, extension : str, precision : int):
         prefix = prefix.replace("$", "")
         display(Math(r"%s\text{%s}" % (prefix, evaluatedExpression)))
     else:
-        display(Math(r"\text{%s%s}" % (prefix, evaluatedExpression)))      
-    
+        display(Math(r"\text{%s%s}" % (prefix, evaluatedExpression)))
     
 def to_eng(prefix : str, num : float, extension : str, precision : int):
     mag = 0
