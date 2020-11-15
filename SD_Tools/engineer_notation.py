@@ -2,7 +2,11 @@ from IPython.display import display, Math
 
 def to_units(prefix : str, num : float, extension : str, precision : int):
     
-    mag = 0
+    if(extension = "kg" or extension=="$kg$"):
+        num = num * 1000
+    else
+        mag = 1
+    
     if(num > 0):
         polarity = 0
     else:
@@ -24,10 +28,7 @@ def to_units(prefix : str, num : float, extension : str, precision : int):
     
     if(polarity):
         num = -num
-    if(mag = -1 && extension == "kg"):
-        evaluatedExpression = "%.*f g" %(precision, num)
-    else:
-        evaluatedExpression = "%.*f %s%s" %(precision, num, indices[mag+8], extension)
+    evaluatedExpression = "%.*f %s%s" %(precision, num, indices[mag+8], extension)
     if(prefix[0] == '$' and prefix[-1] == '$'): #latex
         prefix = prefix.replace("$", "")
         display(Math(r"%s\text{%s}" % (prefix, evaluatedExpression)))
