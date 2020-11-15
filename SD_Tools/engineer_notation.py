@@ -4,7 +4,7 @@ def to_units(prefix : str, num : float, extension : str, precision : int):
     
     if(extension == "kg" or extension == "$kg$"):
         num = num * 1000
-    else
+    else:
         mag = 1
     
     if(num > 0):
