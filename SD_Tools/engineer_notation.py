@@ -54,6 +54,8 @@ def __latexDisplay(strIn : str):
         if(i == len(strIn)-1): #Dernier élément
             if(not equationMode):
                 strOut[i] =  strIn[i] + "}"
+            else
+                strOut[i] = ' '
         elif(strIn[i] == "$" and i > 0):
             if(equationMode):
                 equationMode = False
