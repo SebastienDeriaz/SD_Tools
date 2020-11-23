@@ -32,11 +32,8 @@ def to_units(prefix : str, num : float, extension : str, precision : int = 2):
     formattedExtension = __latexDisplay(" " + indices[mag+8] + extension)
     evaluatedExpression = "%.*f %s" %(precision, num, formattedExtension)
     
-    print("eval : ", evaluatedExpression)
     formattedPrefix = __latexDisplay(prefix)
-    print("prefix format: ", formattedPrefix)
     mathExpression = formattedPrefix + evaluatedExpression
-    print("final : ", mathExpression);
     display(Math(mathExpression))
     
 
@@ -91,5 +88,4 @@ def to_eng(prefix : str, num : float, extension : str, precision : int = 2):
     
     formattedPrefix = __latexDisplay(prefix)
     mathExpression = formattedPrefix + evaluatedExpression
-    print("final : ", mathExpression);
     display(Math(mathExpression))
