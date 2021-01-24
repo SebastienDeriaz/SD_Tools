@@ -1,6 +1,7 @@
 from IPython.display import display, Math
 
-def to_units(prefix : str, num : float, extension : str, precision : int = 2):
+def to_units(prefix : str, numIn : float, extension : str, precision : int = 2):
+    num = numIn * 1 #Essai de copie ?
     if(extension == "kg" or extension == "$kg$"):
         num = num * 1000
         mag = 1
@@ -63,7 +64,8 @@ def __latexDisplay(strIn : str):
     strOut = "".join(strOut)
     return strOut
 
-def to_eng(prefix : str, num : float, extension : str, precision : int = 2):
+def to_eng(prefix : str, numIn : float, extension : str, precision : int = 2):
+    num = numIn * 1 #Essai de copie ?
     mag = 0
     if(num > 0):
         polarity = 0
